@@ -73,7 +73,7 @@ for css_file in CSS_FILES:
     subprocess.check_call(['cp', '--parents', css_file, settings.STATIC_ROOT])
 
 
-IGNORE = ['assets', 'node_modules']
+IGNORE = ['assets', 'node_modules', 'js', 'ts']
 COLLECT_STATIC_ARGS = [x for tup in zip(['-i' for i in IGNORE], IGNORE) for x in tup]
 # Collect the files that we're going to serve; this creates prod-static/serve.
 subprocess.check_call(['./manage.py', 'collectstatic', '--no-default-ignore',
